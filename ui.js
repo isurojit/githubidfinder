@@ -27,8 +27,6 @@ class UI{
                 </div>
             </div>
         </div>
-        <h3 class="page-heading mb-3>Latest Repos</h3>
-        <div id="repos"></div>
         `;
     }
 
@@ -43,12 +41,16 @@ class UI{
                         <a href="${repo.html_url}" target="_blank"> ${repo.name}</a>
                     </div>
                     <div class="col-md-6">
-
+                        <span class="badge badge-primary">Star: ${repo.targazers_count}</span>
+                        <span class="badge badge-primary">Fork: ${repo.forks_count}</span>
+                        <span class="badge badge-primary">Watches: ${repo.watchers_count}</span>
                     </div>
                 </div>
             </div>
-            `
-        })
+            `;
+        });
+        //output the repo
+        document.querySelector('#repos').innerHTML = output;
     }
 
     //Show alert Msg
